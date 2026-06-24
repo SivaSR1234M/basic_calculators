@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Calculator Hub – EMI, SIP, GST, Tax & Student Tools</title>
+<meta name="description" content="Free online calculators for EMI, SIP, FD, GST, Income Tax, Loan Eligibility, Credit Card Interest, Percentage, CGPA, GPA, NEET & JEE Rank.">
+
+<style>
+body {font-family: Arial; margin:0; background:#f5f7fb;}
+header {background:#1f4bd8; color:white; padding:20px; text-align:center;}
+.container {max-width:1000px; margin:auto; padding:15px;}
+.card {background:white; padding:15px; margin:15px 0; border-radius:10px;}
+input, select, button {width:100%; padding:10px; margin:6px 0;}
+button {background:#1f4bd8; color:white; border:none; cursor:pointer;}
+.result {color:green; font-weight:bold; margin-top:8px;}
+h2 {color:#1f4bd8;}
+.grid {display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:768px){.grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>India Calculator Hub</h1>
+<p>EMI | SIP | FD | Tax | GST | Student Tools</p>
+</header>
+
+<div class="container">
+
+
+<!-- CREDIT CARD INTEREST -->
+<div class="card">
+<h2>Credit Card Interest Calculator</h2>
+<input id="ccAmt" type="number" placeholder="Outstanding Amount">
+<input id="ccRate" type="number" placeholder="Monthly Interest % (e.g. 3)">
+<input id="ccMonths" type="number" placeholder="Months">
+<button onclick="ccCalc()">Calculate</button>
+<div class="result" id="ccRes"></div>
+</div>
+
+
+
+</div>
+
+<script>
+
+
+
+// Credit card
+function ccCalc(){
+let amt=Number(document.getElementById("ccAmt").value);
+let r=Number(document.getElementById("ccRate").value)/100;
+let m=Number(document.getElementById("ccMonths").value);
+let total=amt*Math.pow(1+r,m);
+document.getElementById("ccRes").innerText="Payable: ₹ "+total.toFixed(0);
+}
+
+
+
+</script>
+
+</body>
+</html>
